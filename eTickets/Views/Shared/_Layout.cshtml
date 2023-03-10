@@ -11,49 +11,37 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm nav nav-tabs bg-dark border-bottom box-shadow mb-0" >
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Movies" asp-action="Index">eTickets</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Movies" asp-action="Index">Tickets</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    @*<ul class="navbar-nav flex-grow-1">
-                       <li class="navbar-nav flex-grow-1">
-                           <a class="nav-link text-dark" asp-controller="Movies" asp-action="Index"><i class="badge-info bi-film"></i> Movies</a>
+                    <div class="navbar-nav flex-grow-1">
+                       <div class="navbar-nav flex-grow-1">
+                           <a class="nav-link text-white" asp-controller="Movies" asp-action="Index"><i class="badge-info bi-film"></i> Movies</a>   
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Management
+                                </a>
 
-                            <a class="nav-link dropdown-toggle text-dark" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-gear"></i> Management
-                            </a>
-                           
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels-fill"></i> Cinemas</a></li>
-                                <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
-                                <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-circle"></i> Actors</a></li>
-                            </ul>
-                       </li>      
-                    </ul> *@
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="navbar-nav flex-grow-1">
-                            <a class="nav-link text-dark" asp-controller="Movies" asp-action="Index"><i class="badge-info bi-film"></i> Movies</a>
-                            <a class="nav-link dropdown-toggle text-dark" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-gear"></i> Management
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                               <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels-fill"></i> Cinemas</a></li>
-                               <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
-                               <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-circle"></i> Actors</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form>
-                        <div class="input-group mb-3">                                                  
-                            <input name="SearchString" type="text" class="form-control" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels-fill"></i> Cinemas</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-circle"></i> Actors</a></li>
+                                </ul>
                             </div>
-                        </div>
+                       </div>      
+                    </div> 
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filters" style="padding-right:25px;">
+                        <div class="input-group mb-6">                                                  
+                            <input name="SearchString" type="text" class="form-control btn-outline-light" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-primary my-2 my-sm-0"><i class="bi bi-search-heart"></i></button>
+                            </div>
+                        </div>             
                     </form>
                 </div>
             </div>
@@ -66,9 +54,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        @*<div class="container">
             &copy; 2023 - eTickets 
-        </div>
+        </div>*@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
