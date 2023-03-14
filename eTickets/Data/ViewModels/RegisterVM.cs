@@ -21,7 +21,7 @@ namespace eTickets.Data.ViewModels
         [Display(Name = "Confirm password")]
         [Required(ErrorMessage = "Confirm password is required")]
         [DataType(DataType.Password)]
-        [Compare("password", ErrorMessage = "Passwords do not match")]
+        [Compare("Password", ErrorMessage = "Passwords do not match")]
         public string ConfirmPassword { get; set; }
     }
 }
