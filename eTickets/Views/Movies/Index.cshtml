@@ -4,20 +4,20 @@
     ViewData["Title"] = "List of Movies";
 }
 
-<div class="row bg-dark">
+<div class="row" style="background-image:url('https://c0.wallpaperflare.com/preview/475/850/350/shallow-focus-photography-of-video-camera.jpg'); background-size:30% 60%; margin-top:50px">
     @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
             <div class="card mb-8" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-20">
-                        <div class="card-header text-white bg-info">
+                        <div class="card-header text-dark" style="box-shadow">
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
                                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                     {
-                                        <a class="text-white float-end" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                                        <a class="text-dark float-end" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
                                     }
                                 </h5>
                             </p>

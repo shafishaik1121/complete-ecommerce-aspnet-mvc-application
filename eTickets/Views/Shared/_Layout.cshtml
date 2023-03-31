@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm nav nav-tabs bg-dark border-bottom box-shadow mb-0">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background-image:url('https://www.jacaranda.com.au/wp-content/uploads/2017/11/bg-nav-bar-e1522125676147.jpg'); margin-bottom:.120px">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" asp-area="" asp-controller="Movies" asp-action="Index">Tickets</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -26,7 +26,7 @@
                             @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                             {
                                 <div class="dropdown">
-                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle text-white rounded-pill px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Management
                                     </a>
 
@@ -39,15 +39,14 @@
                             }
                         </div>
                     </div>
-                    <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filters" style="padding-right:25px;">
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filters" style="padding-right:25px">
                         <div class="input-group mb-6">
                             <input name="SearchString" type="text" class="form-control btn-outline-light" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-prepend">
                                 <button class="btn btn-outline-primary my-2 my-sm-0"><i class="bi bi-search-heart"></i></button>
                             </div>
                         </div>
-                    </form>
-
+                    </form>                   
                     <ul class="navbar-nav">
                         @await Component.InvokeAsync("ShoppingCartSummary")
                     </ul>

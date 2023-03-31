@@ -4,8 +4,8 @@
     ViewData["Title"] = "Movie Details";
 }
 
-<div class="row bg-dark">
-    <div class="col-md-8 offset-2">
+<div class="row" style="background-image:url('https://www.okcasa.net/wp-content/uploads/2022/08/Video-Production-Boston.jpg'); background-size:30% 20%; ">
+    <div class="col-md-8 offset-2 ">
         <div class="card mb-8" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-20">
@@ -59,11 +59,20 @@
                             <div class="row">
                                 @foreach(var actor in Model.Actors_Movies)
                                 {
-                                    <div class="column text-center">
+                                    <table class="column text-center">
+                                        <tr>
+                                            <td>
+                                                <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width:150px" />
+                                                <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">@actor.Actor.FullName</a>
+                                            </td>
+                                            
+                                        </tr>
+                                    </table>
+                                    @*<div class="column text-center">
                                         <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width:150px"/>
-                                        <br/>
+                                        
                                         <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">@actor.Actor.FullName</a>
-                                    </div>
+                                    </div>*@
                                 }
                             </div>
                         </p>
